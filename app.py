@@ -6,7 +6,6 @@ import streamlit as st
 import exploratory_app
 import preprocessing_app
 import about_data_app
-import code_app
 
 PAGES = {
     "Exploratory Data Analysis": exploratory_app,
