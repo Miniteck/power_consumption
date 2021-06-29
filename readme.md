@@ -11,8 +11,7 @@ For more detailed information regarding the dataset, please visit the link bello
 ### Tools used:
 - **Language**: Python
 - **Platform**: Jupyter-Lab / VS Code
-- **Application**: Streamlit lib
-- **Link to app**: [power-usage-consumption]()
+- **Application**: Streamlit lib | **Link to app**: [power-usage-consumption]()
 - **Deployment**: Heroku
 
 ### Data Download
