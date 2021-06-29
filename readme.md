@@ -33,8 +33,11 @@ From here it's highly important to find out what kind of model parameters will b
 
 **3rd step: Prediction**<br>
 For the prediction of the target variable there are 2 ML algorithams used to find out which one performs better.
-- [FBProphet](https://github.com/facebook/prophet)
-- [ARIMA](http://alkaline-ml.com/pmdarima/)
+- [FBProphet](https://github.com/Miniteck/power_consumption/blob/main/workbooks/FBProphet_model.ipynb)
+![image](https://user-images.githubusercontent.com/59763166/123873716-388b1600-d937-11eb-9ac0-f65a07dfc1a9.png)
+
+- [ARIMA](https://github.com/Miniteck/power_consumption/blob/main/workbooks/ARIMA_model.ipynb)
+![image](https://user-images.githubusercontent.com/59763166/123873741-45a80500-d937-11eb-984b-0d1048b5eb68.png)
 
 These are picked because this is timeseries dataset and has seasonalities.
 The conclusion and the results can be seen on the link above **Streamlit app**.
