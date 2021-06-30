@@ -11,7 +11,7 @@ For more detailed information regarding the dataset, please visit the link bello
 ### Tools used:
 - **Language**: Python
 - **Platform**: Jupyter-Lab / VS Code
-- **Application**: Streamlit lib | **Link to app**: [power-usage-consumption]()
+- **Application**: Streamlit lib | **Link to app**: [power-usage-consumption](https://power-usage-prediction.herokuapp.com)
 - **Deployment**: Heroku
 
 ### Data Download
@@ -40,7 +40,7 @@ For the prediction of the target variable there are 2 ML algorithams used to fin
 ![image](https://user-images.githubusercontent.com/59763166/123873741-45a80500-d937-11eb-984b-0d1048b5eb68.png)
 
 These are picked because this is timeseries dataset and has seasonalities.
-The conclusion and the results can be seen on the link above **Streamlit app**.
+The conclusion and the results can be seen on the link - [**Streamlit app**](https://power-usage-prediction.herokuapp.com).
 
 ### Future goal:
 - Build LSTM Prediction model and compare it with the above models.
