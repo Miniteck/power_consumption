@@ -62,9 +62,7 @@ def app():
     @st.cache(persist=True)
     def load_data():
         '''Loads the data and converts Date into Datetime'''
-        data = pd.read_csv(data_url, delimiter=';', low_memory=False, 
-                            usecols=['Date', 'Time', 'Global_active_power',
-                                    'Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'])
+        data = pd.read_csv(data_url, delimiter=';', low_memory=False)
         # Converting the date and time columns into Datetime series
         data['Date_time'] = pd.to_datetime(data.pop('Date')) + pd.to_timedelta(data.pop('Time'))
         # Replacing '?' to NaN values
