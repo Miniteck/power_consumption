@@ -37,19 +37,44 @@ def app():
                     """)
 
     # Loading the data
-    data_url = ('household_power_consumption_final.csv')
+    # data_url = ('household_power_consumption_final.csv')
+    data_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00235/household_power_consumption.zip'
+
+
+    # @st.cache(persist=True)
+    # def load_data():
+    #     '''Loads the data and converts Date into Datetime'''
+    #     data = pd.read_csv(data_url, low_memory=False)
+    #     data['Date_time'] = pd.to_datetime(data['Date_time'])
+    #     data_daily_grp = data.groupby(
+    #     pd.Grouper(key='Date_time', freq='D')).agg({'Global_active_power':'sum', 
+    #                                                 'Sub_metering_1':'sum', 
+    #                                                 'Sub_metering_2':'sum', 
+    #                                                 'Sub_metering_3':'sum'}).reset_index()
 
     @st.cache(persist=True)
     def load_data():
         '''Loads the data and converts Date into Datetime'''
-        data = pd.read_csv(data_url, low_memory=False)
-        data['Date_time'] = pd.to_datetime(data['Date_time'])
+        data = pd.read_csv(data_url, delimiter=';', low_memory=False, 
+                            usecols=['Date', 'Time', 'Global_active_power',
+                                    'Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'])
+        # Converting the date and time columns into Datetime series
+        data['Date_time'] = pd.to_datetime(data.pop('Date')) + pd.to_timedelta(data.pop('Time'))
+        # Replacing '?' to NaN values
+        data.replace('?', np.nan, inplace=True)
+        # Dropping all NaN values
+        # data.dropna(how="any", inplace=True)
+        # Converting the data types for all columns except date_time and week_num
+        cols = [i for i in data.columns if i not in ['Date_time']]
+        for col in cols:
+            data[col] = pd.to_numeric(data[col], downcast='integer')
+
         data_daily_grp = data.groupby(
         pd.Grouper(key='Date_time', freq='D')).agg({'Global_active_power':'sum', 
                                                     'Sub_metering_1':'sum', 
                                                     'Sub_metering_2':'sum', 
                                                     'Sub_metering_3':'sum'}).reset_index()
-        
+    
         # Converting all zero values to the mean of Global_active_power
         data_daily_grp['Global_active_power'] = data_daily_grp['Global_active_power'].replace(0, np.nan).fillna(data_daily_grp['Global_active_power'].mean())
 
