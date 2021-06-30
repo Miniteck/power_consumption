@@ -278,16 +278,16 @@ def app():
 
         ---
         >Comparing the performance of the models for **30 days** forecast:
-        - Multivar vs Univar **RMSE**: 160 vs 440 - kWh on Global_active_power
-        - Multivar vs Univar **MAPE**: 7% vs 21% - kWh on Global_active_power
+        - FBProphet vs ARIMA **RMSE**: 160 vs 440 - kWh on Global_active_power
+        - FBProphet vs ARIMA **MAPE**: 7% vs 21% - kWh on Global_active_power
         ---
         >Comparing the performance of the models for **60 days** forecast:
-        - Multivar vs Univar **RMSE**: 197 vs 325 - kWh on Global_active_power
-        - Multivar vs Univar **MAPE**: 9% vs 15% - kWh on Global_active_power
+        - FBProphet vs ARIMA **RMSE**: 197 vs 325 - kWh on Global_active_power
+        - FBProphet vs ARIMA **MAPE**: 9% vs 15% - kWh on Global_active_power
         ---
         >Comparing the performance of the models for **90 days** forecast:
-        - Multivar vs Univar **RMSE**: 230 vs 354 - kWh on Global_active_power
-        - Multivar vs Univar **MAPE**: 11% vs 25% - kWh on Global_active_power
+        - FBProphet vs ARIMA **RMSE**: 230 vs 354 - kWh on Global_active_power
+        - FBProphet vs ARIMA **MAPE**: 11% vs 25% - kWh on Global_active_power
     ''')
     st.markdown("____")
 
